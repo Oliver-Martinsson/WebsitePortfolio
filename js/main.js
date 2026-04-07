@@ -235,15 +235,38 @@ function isValidEmail(email) {
 
 // ---- Gallery thumbnail swap ----
 const galleryMain = document.getElementById('gallery-main');
+const galleryPrev = document.getElementById('gallery-prev');
+const galleryNext = document.getElementById('gallery-next');
 if (galleryMain) {
-  document.querySelectorAll('.gallery-thumb').forEach(thumb => {
-    thumb.addEventListener('click', () => {
-      const mainContent  = galleryMain.innerHTML;
-      const thumbContent = thumb.innerHTML;
-      galleryMain.innerHTML = thumbContent;
-      thumb.innerHTML       = mainContent;
+  const mainImg  = galleryMain.querySelector('img');
+  const thumbEls = [...document.querySelectorAll('.gallery-thumb')];
+
+  // Build ordered image list: main image first, then each thumb
+  const images = [
+    { src: mainImg.src, alt: mainImg.alt },
+    ...thumbEls.map(t => {
+      const img = t.querySelector('img');
+      return img ? { src: img.src, alt: img.alt } : null;
+    }).filter(Boolean)
+  ];
+
+  let current = 0;
+
+  function showImage(index) {
+    current = (index + images.length) % images.length;
+    mainImg.src = images[current].src;
+    mainImg.alt = images[current].alt;
+    thumbEls.forEach((thumb, i) => {
+      thumb.classList.toggle('active', i + 1 === current);
     });
+  }
+
+  thumbEls.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => showImage(i + 1));
   });
+
+  if (galleryPrev) galleryPrev.addEventListener('click', () => showImage(current - 1));
+  if (galleryNext) galleryNext.addEventListener('click', () => showImage(current + 1));
 }
 
 // ---- Footer year ----

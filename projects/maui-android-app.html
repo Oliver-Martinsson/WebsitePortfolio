@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Task Manager App | Oliver Martinsson</title>
+  <title>MAUI Android App | Oliver Martinsson</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,16 +42,17 @@
         Back to Projects
       </a>
       <div class="project-hero-meta">
-        <span class="project-category-badge">Desktop</span>
+        <span class="project-category-badge">Mobile</span>
       </div>
-      <h1 class="project-page-title">Task Manager App (WPF)</h1>
+      <h1 class="project-page-title">TrackIt — .NET MAUI Android App</h1>
       <p class="project-page-desc">
-        A Windows desktop application for personal task management. Built with WPF and the MVVM pattern.
-        Supports categories, deadlines, priorities, and local SQLite storage.
+        A cross-platform mobile application built with .NET MAUI, targeting Android. Consumes a
+        public REST API to display real-time data, with a focus on Android API compatibility,
+        offline caching, and a clean MVVM architecture.
       </p>
       <div class="project-hero-links">
         <!-- ★★★ Replace href="#" with your GitHub repository URL ★★★ -->
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <a href="https://github.com/Oliver-Martinsson/Booked" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.185 6.839 9.504.5.092.682-.217.682-.483
               0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608
@@ -80,48 +81,36 @@
         Click a thumbnail below to swap it with the main image.
       -->
 
-      <div class="gallery-main" id="gallery-main">
-        <div class="gallery-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
+      <div class="gallery-viewer">
+        <button class="gallery-nav gallery-nav-prev" id="gallery-prev" aria-label="Previous image">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"/>
           </svg>
-          <span>Main screenshot</span>
-          <code>../assets/projects/task-manager-1.jpg</code>
+        </button>
+        <div class="gallery-main" id="gallery-main">
+          <img src="/assets/picture1.png" alt="Booked app screenshot 1" />
         </div>
+        <button class="gallery-nav gallery-nav-next" id="gallery-next" aria-label="Next image">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
       </div>
 
       <div class="gallery-thumbnails">
         <div class="gallery-thumb">
-          <div class="gallery-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span>Screenshot 2</span>
-          </div>
+          <img src="/assets/picture2.png" alt="Booked app screenshot 2" />
         </div>
         <div class="gallery-thumb">
-          <div class="gallery-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span>Screenshot 3</span>
-          </div>
+          <img src="/assets/picture3.png" alt="Booked app screenshot 3" />
         </div>
         <div class="gallery-thumb">
-          <div class="gallery-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/>
-              <polyline points="21 15 16 10 5 21"/>
-            </svg>
-            <span>Screenshot 4</span>
-          </div>
+          <img src="/assets/picture4.png" alt="Booked app screenshot 4" />
+        </div>
+        <div class="gallery-thumb">
+          <img src="/assets/picture5.png" alt="Booked app screenshot 5" />
         </div>
       </div>
 
@@ -136,37 +125,70 @@
         <div class="project-body reveal">
           <h3>Overview</h3>
           <p>
-            A Windows desktop application for managing personal tasks and to-dos. Built using WPF
-            with the MVVM (Model-View-ViewModel) pattern to keep the UI logic cleanly separated from
-            business logic and data.
+            TrackIt is a .NET MAUI application targeting Android (API 24+) that lets users browse
+            and track items fetched from a REST API. The app was built with Android compatibility
+            as the primary concern — handling permission requests, back-navigation gestures, and
+            hardware acceleration differences between API levels 24 through 34.
           </p>
           <p>
-            All data is persisted locally using SQLite via Entity Framework Core, so the app works
-            fully offline without any server dependency.
+            Data is fetched asynchronously using <code>HttpClient</code> with a typed client pattern,
+            deserialized with <code>System.Text.Json</code>, and cached locally with
+            <code>Preferences</code> and <code>SQLite-net-pcl</code> so the app remains usable
+            when the device is offline.
           </p>
 
           <h3>Key Features</h3>
           <ul>
-            <li>Create, edit, and delete tasks with titles, descriptions, and due dates</li>
-            <li>Priority levels (Low, Medium, High) with color-coded indicators</li>
-            <li>Category grouping and filtering for organized task views</li>
-            <li>Mark tasks as complete with visual strike-through and progress tracking</li>
-            <li>SQLite local storage — data persists between sessions</li>
-            <li>Responsive layout adapting to different window sizes</li>
+            <li>Live REST API integration with async/await and typed <code>HttpClient</code></li>
+            <li>Offline-first caching using SQLite-net-pcl and MAUI Preferences</li>
+            <li>Android back-navigation support via <code>Shell</code> and hardware back button handling</li>
+            <li>Runtime permission requests (network state, storage) for Android API 23+</li>
+            <li>Pull-to-refresh and infinite scroll for large datasets</li>
+            <li>Light/dark theme following the Android system setting</li>
+            <li>Tested on Android API 24 (Nougat) up to API 34 (Android 14)</li>
+          </ul>
+
+          <h3>Android Compatibility</h3>
+          <p>
+            One of the core challenges was ensuring consistent behaviour across Android versions.
+            Key areas addressed:
+          </p>
+          <ul>
+            <li>
+              <strong>AndroidManifest.xml</strong> — declared <code>INTERNET</code> and
+              <code>ACCESS_NETWORK_STATE</code> permissions and set
+              <code>android:minSdkVersion="24"</code> with <code>targetSdkVersion="34"</code>.
+            </li>
+            <li>
+              <strong>Network security config</strong> — applied a custom
+              <code>network_security_config.xml</code> to enforce HTTPS and handle cleartext traffic
+              rules for older API levels.
+            </li>
+            <li>
+              <strong>Scoped storage</strong> — used <code>MediaStore</code> APIs for file writes on
+              Android 10+ (API 29) while falling back to legacy external storage for API 24–28.
+            </li>
+            <li>
+              <strong>WindowInsets / edge-to-edge</strong> — handled system bar insets to avoid
+              content being clipped behind the navigation bar on API 30+.
+            </li>
           </ul>
 
           <h3>Architecture</h3>
           <p>
-            The MVVM pattern was strictly followed: Views are pure XAML with no code-behind logic,
-            ViewModels expose observable properties and commands, and Models represent the data layer.
-            Data binding and INotifyPropertyChanged keep the UI in sync automatically.
+            The project follows MVVM using the CommunityToolkit.Mvvm source generators
+            (<code>[ObservableProperty]</code>, <code>[RelayCommand]</code>) to eliminate
+            boilerplate. ViewModels are registered with the MAUI DI container via
+            <code>MauiProgram.cs</code>, keeping every layer independently testable.
           </p>
 
           <h3>What I Learned</h3>
           <p>
-            This project gave me solid hands-on experience with WPF data binding, MVVM, and the
-            ICommand pattern. Managing real-time UI updates with ObservableCollection and understanding
-            the WPF dispatcher were the most valuable takeaways.
+            Building for Android specifically taught me how platform-specific behaviour in MAUI
+            differs from plain Xamarin or Windows targets. Navigating the Android lifecycle,
+            handling back-stack correctly inside MAUI Shell, and writing API-level conditional code
+            using <code>OperatingSystem.IsAndroidVersionAtLeast()</code> were the most valuable
+            takeaways from this project.
           </p>
         </div>
 
@@ -195,11 +217,14 @@
             <h4>Tech Stack</h4>
             <div class="sidebar-tech-list">
               <span class="skill-tag">C#</span>
-              <span class="skill-tag">WPF</span>
+              <span class="skill-tag">.NET MAUI</span>
               <span class="skill-tag">MVVM</span>
-              <span class="skill-tag">SQLite</span>
-              <span class="skill-tag">Entity Framework</span>
+              <span class="skill-tag">REST API</span>
+              <span class="skill-tag">HttpClient</span>
+              <span class="skill-tag">SQLite-net-pcl</span>
+              <span class="skill-tag">CommunityToolkit.Mvvm</span>
               <span class="skill-tag">XAML</span>
+              <span class="skill-tag">Android</span>
             </div>
           </div>
 
@@ -208,11 +233,11 @@
             <div class="project-meta-list">
               <div class="meta-item">
                 <span class="meta-label">Type</span>
-                <span class="meta-value">Desktop App</span>
+                <span class="meta-value">Mobile App</span>
               </div>
               <div class="meta-item">
                 <span class="meta-label">Platform</span>
-                <span class="meta-value">Windows</span>
+                <span class="meta-value">Android (API 24–34)</span>
               </div>
               <div class="meta-item">
                 <span class="meta-label">Status</span>
