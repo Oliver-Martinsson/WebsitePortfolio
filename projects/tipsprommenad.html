@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Platform | Oliver Martinsson</title>
+  <title>Tipsprommenad | Oliver Martinsson</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,7 +11,6 @@
 </head>
 <body>
 
-  <!-- ========== NAVIGATION ========== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="../index.html" class="nav-logo">
@@ -31,7 +30,6 @@
     </div>
   </nav>
 
-  <!-- ========== PROJECT HERO ========== -->
   <section class="project-page-hero">
     <div class="container">
       <a href="../index.html#projects" class="back-link">
@@ -41,19 +39,15 @@
       <div class="project-hero-meta">
         <span class="project-category-badge">Web</span>
       </div>
-      <h1 class="project-page-title">Blog Platform (Razor Pages)</h1>
+      <h1 class="project-page-title">Tipsprommenad</h1>
       <p class="project-page-desc">
-        A full-stack blog platform using ASP.NET Core Razor Pages. Includes an admin panel,
-        markdown post editor, tag filtering, and user authentication with ASP.NET Identity.
+        A web app that turns a walk into an interactive quiz. Players move through real-world
+        locations where geo-fencing unlocks questions as they enter each zone. Built with
+        Firebase as the back-end, Google OAuth for authentication, and the Google Maps API
+        to render routes and trigger location-based checkpoints.
       </p>
       <div class="project-hero-links">
-        <!-- ★★★ Replace href="#" with your GitHub repository URL ★★★ -->
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          <svg width="18" height="18" fill="currentColor"><use href="../assets/icons.svg#icon-github"></use></svg>
-          View on GitHub
-        </a>
-        <!-- ★★★ Replace href="#" with your live demo URL, or remove this button if not applicable ★★★ -->
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+        <a href="https://OliverMartinsson.se" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <svg width="18" height="18"><use href="../assets/icons.svg#icon-external-link"></use></svg>
           Live Demo
         </a>
@@ -61,23 +55,15 @@
     </div>
   </section>
 
-  <!-- ========== GALLERY ========== -->
   <div class="project-gallery">
     <div class="container">
 
-      <!--
-        ★★★ HOW TO ADD SCREENSHOTS ★★★
-        1. Put your image files in: assets/projects/
-        2. For each slot, replace the <div class="gallery-placeholder">…</div> block
-           with: <img src="../assets/projects/YOUR-FILE.jpg" alt="Description" />
-        Click a thumbnail below to swap it with the main image.
-      -->
 
       <div class="gallery-main" id="gallery-main">
         <div class="gallery-placeholder">
           <svg width="48" height="48"><use href="../assets/icons.svg#icon-image"></use></svg>
           <span>Main screenshot</span>
-          <code>../assets/projects/blog-platform-1.jpg</code>
+          <code>../assets/projects/tipsprommenad-1.jpg</code>
         </div>
       </div>
 
@@ -105,7 +91,6 @@
     </div>
   </div>
 
-  <!-- ========== PROJECT CONTENT ========== -->
   <section class="project-content">
     <div class="container">
       <div class="project-content-grid">
@@ -113,65 +98,56 @@
         <div class="project-body reveal">
           <h3>Overview</h3>
           <p>
-            A full-stack web application for publishing and managing blog posts. Built with ASP.NET Core
-            Razor Pages, it delivers a complete content management experience: a public-facing reader
-            view and a password-protected admin panel for authors.
+            Tipsprommenad is a location-aware quiz walk web app. Participants follow a route on a
+            map and, as they physically walk into each checkpoint zone, a question is automatically
+            unlocked on their device. This combines the social experience of a walk with a
+            gamified quiz, making it ideal for events, school activities, or team building.
           </p>
           <p>
-            User accounts are handled by ASP.NET Identity, which provides secure password hashing,
-            login/logout flows, and role management out of the box.
+            The app uses Firebase for real-time data sync and back-end storage, Google OAuth so
+            users can sign in instantly with their Google account, and the Google Maps JavaScript
+            API to display the route and manage the geo-fenced checkpoint areas.
           </p>
 
           <h3>Key Features</h3>
           <ul>
-            <li>Public blog listing with pagination and tag-based filtering</li>
-            <li>Markdown post editor with live preview in the admin panel</li>
-            <li>User registration and login via ASP.NET Identity</li>
-            <li>Role-based access: only authenticated admins can create or delete posts</li>
-            <li>Tag management system — add, edit, and browse posts by tags</li>
-            <li>EF Core Code First with SQL Server for data persistence</li>
+            <li>Interactive map powered by the Google Maps API showing the quiz route</li>
+            <li>Geo-fencing — questions unlock automatically when a player enters a checkpoint zone</li>
+            <li>Sign-in with Google via Google OAuth for quick, secure authentication</li>
+            <li>Firebase Firestore for real-time question, answer, and score storage</li>
+            <li>Admin view for creating routes, adding checkpoints, and writing questions</li>
+            <li>Live score tracking as players complete each checkpoint</li>
           </ul>
 
-          <h3>Architecture</h3>
+          <h3>How Geo-fencing Works</h3>
           <p>
-            Razor Pages naturally organizes each page into a paired .cshtml view and a PageModel
-            code-behind, keeping the application tidy. Business logic is extracted into service
-            classes, and EF Core handles all database interactions through a repository layer.
+            Each checkpoint is stored as a coordinate and radius in Firestore.
+            The app continuously reads the device's GPS position via the browser Geolocation API
+            and checks whether the player is inside any checkpoint circle. When a match is found,
+            the corresponding question is fetched and displayed — and the checkpoint is marked as
+            visited so it cannot be unlocked twice.
           </p>
 
           <h3>What I Learned</h3>
           <p>
-            This project gave me strong familiarity with ASP.NET Identity, Razor Pages conventions,
-            and tag-based content organization. Implementing a markdown renderer and managing
-            image uploads also introduced me to file handling in ASP.NET Core.
+            This project deepened my understanding of real-time databases, OAuth flows, and
+            browser-side geolocation. Integrating three external APIs (Firebase, Google Maps, and
+            Google OAuth) in a single cohesive app was a great exercise in API design, async
+            JavaScript, and handling edge cases like GPS drift or loss of connectivity.
           </p>
         </div>
 
         <aside class="project-sidebar">
           <div class="sidebar-card reveal">
-            <h4>Links</h4>
-            <div class="sidebar-links">
-              <!-- ★★★ Replace href="#" with your actual URLs ★★★ -->
-              <a href="#" target="_blank" rel="noopener noreferrer" class="sidebar-link">
-                <svg width="16" height="16" fill="currentColor"><use href="../assets/icons.svg#icon-github"></use></svg>
-                GitHub Repository
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" class="sidebar-link">
-                <svg width="16" height="16"><use href="../assets/icons.svg#icon-external-link"></use></svg>
-                Live Demo
-              </a>
-            </div>
-          </div>
-
-          <div class="sidebar-card reveal">
             <h4>Tech Stack</h4>
             <div class="sidebar-tech-list">
-              <span class="skill-tag">C#</span>
-              <span class="skill-tag">Razor Pages</span>
-              <span class="skill-tag">ASP.NET Identity</span>
-              <span class="skill-tag">Entity Framework</span>
-              <span class="skill-tag">SQL Server</span>
-              <span class="skill-tag">Markdown</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Firebase</span>
+              <span class="skill-tag">Firestore</span>
+              <span class="skill-tag">Google OAuth</span>
+              <span class="skill-tag">Google Maps API</span>
+              <span class="skill-tag">Geo-fencing</span>
+              <span class="skill-tag">HTML / CSS</span>
             </div>
           </div>
 
@@ -198,7 +174,6 @@
     </div>
   </section>
 
-  <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
       <p class="footer-copy">
