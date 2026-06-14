@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tipsprommenad | Oliver Martinsson</title>
+  <title>Two Wheels Nordic | Oliver Martinsson</title>
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,17 +39,16 @@
       <div class="project-hero-meta">
         <span class="project-category-badge">Web</span>
       </div>
-      <h1 class="project-page-title">Tipsprommenad</h1>
+      <h1 class="project-page-title">Two Wheels Nordic</h1>
       <p class="project-page-desc">
-        A web app that turns a walk into an interactive quiz. Players move through real-world
-        locations where geo-fencing unlocks questions as they enter each zone. Built with
-        Firebase as the back-end, Google OAuth for authentication, and the Google Maps API
-        to render routes and trigger location-based checkpoints.
+        A community forum platform built for Nordic motorcycle enthusiasts. Riders can create
+        accounts, join discussions across organized topic categories, and connect with other
+        motorcyclists across the region — all under the tagline "Where Riders Connect."
       </p>
       <div class="project-hero-links">
-        <a href="https://OliverMartinsson.se" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+        <a href="https://twowheelsnordic.se" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
           <svg width="18" height="18"><use href="../assets/icons.svg#icon-external-link"></use></svg>
-          Live Demo
+          Visit Site
         </a>
       </div>
     </div>
@@ -58,12 +57,11 @@
   <div class="project-gallery">
     <div class="container">
 
-
       <div class="gallery-main" id="gallery-main">
         <div class="gallery-placeholder">
           <svg width="48" height="48"><use href="../assets/icons.svg#icon-image"></use></svg>
           <span>Main screenshot</span>
-          <code>../assets/projects/tipsprommenad-1.jpg</code>
+          <code>../assets/projects/two-wheels-nordic-1.jpg</code>
         </div>
       </div>
 
@@ -98,42 +96,41 @@
         <div class="project-body reveal">
           <h3>Overview</h3>
           <p>
-            Tipsprommenad is a location-aware quiz walk web app. Participants follow a route on a
-            map and, as they physically walk into each checkpoint zone, a question is automatically
-            unlocked on their device. This combines the social experience of a walk with a
-            gamified quiz, making it ideal for events, school activities, or team building.
+            Two Wheels Nordic is a community-driven forum platform tailored to motorcycle riders
+            across the Nordic countries. The goal was to create a focused, clutter-free space
+            where riders could discuss everything from routes and gear to maintenance and events —
+            without the noise of a generic social network.
           </p>
           <p>
-            The app uses Firebase for real-time data sync and back-end storage, Google OAuth so
-            users can sign in instantly with their Google account, and the Google Maps JavaScript
-            API to display the route and manage the geo-fenced checkpoint areas.
+            The platform features organised discussion categories, user accounts, and a clean
+            reading experience optimised for both desktop and mobile. Privacy is kept simple:
+            only essential cookies are used, with no third-party tracking.
           </p>
 
           <h3>Key Features</h3>
           <ul>
-            <li>Interactive map powered by the Google Maps API showing the quiz route</li>
-            <li>Geo-fencing — questions unlock automatically when a player enters a checkpoint zone</li>
-            <li>Sign-in with Google via Google OAuth for quick, secure authentication</li>
-            <li>Firebase Firestore for real-time question, answer, and score storage</li>
-            <li>Admin view for creating routes, adding checkpoints, and writing questions</li>
-            <li>Live score tracking as players complete each checkpoint</li>
+            <li>Categorised discussion forums covering routes, gear, maintenance, and events</li>
+            <li>User registration and authentication with secure login</li>
+            <li>Thread-based discussions with reply support</li>
+            <li>Minimal, distraction-free UI focused on readability</li>
+            <li>Privacy-first cookie policy — essential cookies only</li>
+            <li>Responsive layout optimised for mobile and desktop</li>
           </ul>
 
-          <h3>How Geo-fencing Works</h3>
+          <h3>Design Approach</h3>
           <p>
-            Each checkpoint is stored as a coordinate and radius in Firestore.
-            The app continuously reads the device's GPS position via the browser Geolocation API
-            and checks whether the player is inside any checkpoint circle. When a match is found,
-            the corresponding question is fetched and displayed — and the checkpoint is marked as
-            visited so it cannot be unlocked twice.
+            The design prioritises function over flash. Navigation is straightforward, forum
+            categories are visually distinct, and the reading experience stays clean on all
+            screen sizes. The understated visual style reflects the Nordic aesthetic — simple,
+            purposeful, and built to last.
           </p>
 
           <h3>What I Learned</h3>
           <p>
-            This project deepened my understanding of real-time databases, OAuth flows, and
-            browser-side geolocation. Integrating three external APIs (Firebase, Google Maps, and
-            Google OAuth) in a single cohesive app was a great exercise in API design, async
-            JavaScript, and handling edge cases like GPS drift or loss of connectivity.
+            Building a community platform meant thinking beyond the UI — user flows for
+            registration, moderation considerations, and making sure the forum hierarchy felt
+            intuitive at a glance. The project sharpened my approach to information architecture
+            and reinforced the value of keeping a product focused on its core use case.
           </p>
         </div>
 
@@ -141,13 +138,10 @@
           <div class="sidebar-card reveal">
             <h4>Tech Stack</h4>
             <div class="sidebar-tech-list">
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">Firebase</span>
-              <span class="skill-tag">Firestore</span>
-              <span class="skill-tag">Google OAuth</span>
-              <span class="skill-tag">Google Maps API</span>
-              <span class="skill-tag">Geo-fencing</span>
               <span class="skill-tag">HTML / CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">MySQL</span>
             </div>
           </div>
 
@@ -156,7 +150,7 @@
             <div class="project-meta-list">
               <div class="meta-item">
                 <span class="meta-label">Type</span>
-                <span class="meta-value">Web App</span>
+                <span class="meta-value">Community Forum</span>
               </div>
               <div class="meta-item">
                 <span class="meta-label">Category</span>
@@ -164,7 +158,7 @@
               </div>
               <div class="meta-item">
                 <span class="meta-label">Status</span>
-                <span class="meta-value meta-status">Completed</span>
+                <span class="meta-value meta-status">Live</span>
               </div>
             </div>
           </div>
