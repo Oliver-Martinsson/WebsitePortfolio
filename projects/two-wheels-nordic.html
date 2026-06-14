@@ -79,10 +79,10 @@
           <img src="../assets/threadpagetwowheels.png" alt="Two Wheels Nordic forum screenshot 3" />
         </div>
         <div class="gallery-thumb">
-          <img src="../assets/Picture4.png" alt="Two Wheels Nordic forum screenshot 4" />
+          <img src="../assets/loginpagetwowheels.png" alt="Two Wheels Nordic forum screenshot 4" />
         </div>
         <div class="gallery-thumb">
-          <img src="../assets/Picture5.png" alt="Two Wheels Nordic forum screenshot 5" />
+          <img src="../assets/Messagespagetwowheels.png" alt="Two Wheels Nordic forum screenshot 5" />
         </div>
       </div>
 
@@ -96,36 +96,27 @@
         <div class="project-body">
           <h3>Overview</h3>
           <p>
-            TwoWheelsNordic is a .NET MAUI application for Android that helps users stay organised.
-            It combines a calendar with event booking, a to-do list where tasks can be added
-            and managed, and a Word of the Day card pulled from the Wordnik API — giving
-            users a small vocabulary boost every day they open the app.
+            TwoWheelsNordic is the online home for motorcyclists across the Nordic region — a place where riders of all kinds come together to share experiences, swap advice, and talk about everything on two wheels.
+             Whether you're a seasoned road warrior, a weekend trail rider, or just getting your license, this is your community. From gear recommendations and route tips to bike builds and general banter,
           </p>
 
           <h3>Key Features</h3>
           <ul>
-            <li>Calendar view with the ability to create, edit, and delete bookings</li>
-            <li>To-do list with add, complete, and remove functionality</li>
-            <li>Word of the Day fetched from the Wordnik API on app launch</li>
+            <li>Forum with 2 categories — Motorcycles (all things motorbike) and General Discussion with possibility to create and respond to threads and requests new categories</li>
+            <li>User accounts — login/registration system</li>
+            <li>Threads & Posts</li>
             <li>Async HTTP calls with <code>HttpClient</code> and graceful error handling</li>
-            <li>Data persistence between sessions using local storage and MongoDB</li>
-            <li>Follows Android Material Design guidelines for a native feel</li>
+            <li>Clean, simple navigation — easy to browse categories and jump into discussions</li>
           </ul>
 
-          <h3>Wordnik API Integration</h3>
+          <h3>Cookie & Privacy Notice</h3>
           <p>
-            On each app launch the app calls the Wordnik Word of the Day endpoint, deserializes
-            the JSON response with <code>System.Text.Json</code>, and displays the word,
-            its definition, and an example sentence. A cached fallback is shown when the
-            device is offline.
+            Implemented as a pure HTML + JavaScript component in the Blazor host page, decoupled from any render mode or framework lifecycle. It reads <code>LocalStorage</code> on load to decide visibility and writes the user's acknowledgement back on click, with a linked <code>/privacy</code> page describing the essential cookies in use. No database or API calls — fully client-side and GDPR-appropriate for a site using only strictly-necessary cookies.
           </p>
 
           <h3>What I Learned</h3>
           <p>
-            This project taught me how to structure a multi-feature MAUI app cleanly, consume
-            a third-party REST API on Android, and handle the MAUI Shell navigation lifecycle.
-            Managing state across the calendar, to-do list, and API views in a single coherent
-            MVVM architecture was the most valuable challenge.
+            This project taught me how to structure a full-stack Blazor WebAssembly app using Onion architecture, where the browser client consumes my own REST API and every layer is wired together with dependency injection. I learned to integrate external services — uploading images to Supabase Storage and connecting Entity Framework Core to a hosted PostgreSQL database. The most valuable challenge was deployment: diagnosing real-world production issues like runtime mismatches, asset integrity caching, and Debug-only artifacts breaking the WebAssembly startup taught me far more than the happy path ever could.
           </p>
         </div>
 
@@ -134,9 +125,9 @@
             <h4>Links</h4>
             <div class="sidebar-links">
               
-              <a href="https://github.com/Oliver-Martinsson/Booked" target="_blank" rel="noopener noreferrer" class="sidebar-link">
-                <svg width="16" height="16" fill="currentColor"><use href="../assets/icons.svg#icon-github"></use></svg>
-                GitHub Repository
+              <a href="https://twowheelsnordic.se/" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+                <svg width="16" height="16" fill="currentColor"><use href="../assets/icons.svg#icon-globe"></use></svg>
+                Go to Two Wheels Nordic
               </a>
             </div>
           </div>
@@ -145,14 +136,29 @@
             <h4>Tech Stack</h4>
             <div class="sidebar-tech-list">
               <span class="skill-tag">C#</span>
-              <span class="skill-tag">.NET MAUI</span>
-              <span class="skill-tag">MVVM</span>
-              <span class="skill-tag">Wordnik API</span>
+              <span class="skill-tag">Blazor WebAssembly</span>
+              <span class="skill-tag">.NET 10</span>
+              <span class="skill-tag">ASP.NET Core</span>
               <span class="skill-tag">HttpClient</span>
-              <span class="skill-tag">CommunityToolkit.Mvvm</span>
-              <span class="skill-tag">XAML</span>
-              <span class="skill-tag">Android</span>
-              <span class="skill-tag">Mobile Development</span>
+              <span class="skill-tag">Minimal API</span>
+              <span class="skill-tag">REST API</span>
+              <span class="skill-tag">Entity Framework Core</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Supabase</span>
+              <span class="skill-tag">Npgsql</span>
+              <span class="skill-tag">ASP.NET Identity</span>
+              <span class="skill-tag">Onion Architecture</span>
+              <span class="skill-tag">Dependency Injection</span>
+              <span class="skill-tag">Async / await</span>
+              <span class="skill-tag">Razor Components</span>
+              <span class="skill-tag">Bootstrap</span>
+              <span class="skill-tag">HTML / CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Supabase Storage</span>
+              <span class="skill-tag">Entity Framework Migrations</span>
+              <span class="skill-tag">Git / GitHub</span>
+              <span class="skill-tag">IIS</span>
+              <span class="skill-tag">Web Deploy</span>
             </div>
           </div>
 
@@ -161,15 +167,15 @@
             <div class="project-meta-list">
               <div class="meta-item">
                 <span class="meta-label">Type</span>
-                <span class="meta-value">Mobile App</span>
+                <span class="meta-value">Web Forum</span>
               </div>
               <div class="meta-item">
                 <span class="meta-label">Platform</span>
-                <span class="meta-value">Android (API 24–34)</span>
+                <span class="meta-value">Web</span>
               </div>
               <div class="meta-item">
                 <span class="meta-label">Status</span>
-                <span class="meta-value meta-status">Completed</span>
+                <span class="meta-value meta-status">Still building</span>
               </div>
             </div>
           </div>
