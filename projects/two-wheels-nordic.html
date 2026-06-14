@@ -39,16 +39,17 @@
       <div class="project-hero-meta">
         <span class="project-category-badge">Web</span>
       </div>
-      <h1 class="project-page-title">Two Wheels Nordic</h1>
+      <h1 class="project-page-title">Two Wheels Nordic Forum</h1>
       <p class="project-page-desc">
-        A community forum platform built for Nordic motorcycle enthusiasts. Riders can create
-        accounts, join discussions across organized topic categories, and connect with other
-        motorcyclists across the region — all under the tagline "Where Riders Connect."
+        About TwoWheelsNordic
+        TwoWheelsNordic is the online home for motorcyclists across the Nordic region — a place where riders of all kinds come together to share experiences, swap advice, and talk about everything on two wheels.
+        Whether you're a seasoned road warrior, a weekend trail rider, or just getting your license, this is your community. From gear recommendations and route tips to bike builds and general banter, TwoWheelsNordic is where Nordic riders connect.
+        Join the forum, start a thread, and be part of a growing community built by riders, for riders.
       </p>
       <div class="project-hero-links">
-        <a href="https://twowheelsnordic.se" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          <svg width="18" height="18"><use href="../assets/icons.svg#icon-external-link"></use></svg>
-          Visit Site
+        <a href="https://twowheelsnordic.se/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="18" height="18" fill="currentColor"><use href="../assets/icons.svg#icon-globe"></use></svg>
+          To Website
         </a>
       </div>
     </div>
@@ -57,32 +58,31 @@
   <div class="project-gallery">
     <div class="container">
 
-      <div class="gallery-main" id="gallery-main">
-        <div class="gallery-placeholder">
-          <svg width="48" height="48"><use href="../assets/Homepagetwo-wheels.jpg"></use></svg>
-          <span>Main screenshot</span>
-          <code>../assets/projects/two-wheels-nordic-1.jpg</code>
+      <div class="gallery-viewer">
+        <button class="gallery-nav gallery-nav-prev" id="gallery-prev" aria-label="Previous image">
+          <svg width="20" height="20"><use href="../assets/icons.svg#icon-chevron-left"></use></svg>
+        </button>
+        <div class="gallery-main" id="gallery-main">
+            <!-- SCALING ISSUE -->
+          <img src="../assets/homepagetwoweels.png" alt="Two Wheels Nordic forum screenshot 1" />
         </div>
+        <button class="gallery-nav gallery-nav-next" id="gallery-next" aria-label="Next image">
+          <svg width="20" height="20"><use href="../assets/icons.svg#icon-chevron-right"></use></svg>
+        </button>
       </div>
 
       <div class="gallery-thumbnails">
         <div class="gallery-thumb">
-          <div class="gallery-placeholder">
-            <svg width="28" height="28"><use href="../assets/icons.svg#icon-image"></use></svg>
-            <span>Screenshot 2</span>
-          </div>
+          <img src="../assets/Forumpagetwoweels.png" alt="Two Wheels Nordic forum screenshot 2" />
         </div>
         <div class="gallery-thumb">
-          <div class="gallery-placeholder">
-            <svg width="28" height="28"><use href="../assets/icons.svg#icon-image"></use></svg>
-            <span>Screenshot 3</span>
-          </div>
+          <img src="../assets/threadpagetwowheels.png" alt="Two Wheels Nordic forum screenshot 3" />
         </div>
         <div class="gallery-thumb">
-          <div class="gallery-placeholder">
-            <svg width="28" height="28"><use href="../assets/icons.svg#icon-image"></use></svg>
-            <span>Screenshot 4</span>
-          </div>
+          <img src="../assets/Picture4.png" alt="Two Wheels Nordic forum screenshot 4" />
+        </div>
+        <div class="gallery-thumb">
+          <img src="../assets/Picture5.png" alt="Two Wheels Nordic forum screenshot 5" />
         </div>
       </div>
 
@@ -93,72 +93,83 @@
     <div class="container">
       <div class="project-content-grid">
 
-        <div class="project-body reveal">
+        <div class="project-body">
           <h3>Overview</h3>
           <p>
-            Two Wheels Nordic is a community-driven forum platform tailored to motorcycle riders
-            across the Nordic countries. The goal was to create a focused, clutter-free space
-            where riders could discuss everything from routes and gear to maintenance and events —
-            without the noise of a generic social network.
-          </p>
-          <p>
-            The platform features organised discussion categories, user accounts, and a clean
-            reading experience optimised for both desktop and mobile. Privacy is kept simple:
-            only essential cookies are used, with no third-party tracking.
+            TwoWheelsNordic is a .NET MAUI application for Android that helps users stay organised.
+            It combines a calendar with event booking, a to-do list where tasks can be added
+            and managed, and a Word of the Day card pulled from the Wordnik API — giving
+            users a small vocabulary boost every day they open the app.
           </p>
 
           <h3>Key Features</h3>
           <ul>
-            <li>Categorised discussion forums covering routes, gear, maintenance, and events</li>
-            <li>User registration and authentication with secure login</li>
-            <li>Thread-based discussions with reply support</li>
-            <li>Minimal, distraction-free UI focused on readability</li>
-            <li>Privacy-first cookie policy — essential cookies only</li>
-            <li>Responsive layout optimised for mobile and desktop</li>
+            <li>Calendar view with the ability to create, edit, and delete bookings</li>
+            <li>To-do list with add, complete, and remove functionality</li>
+            <li>Word of the Day fetched from the Wordnik API on app launch</li>
+            <li>Async HTTP calls with <code>HttpClient</code> and graceful error handling</li>
+            <li>Data persistence between sessions using local storage and MongoDB</li>
+            <li>Follows Android Material Design guidelines for a native feel</li>
           </ul>
 
-          <h3>Design Approach</h3>
+          <h3>Wordnik API Integration</h3>
           <p>
-            The design prioritises function over flash. Navigation is straightforward, forum
-            categories are visually distinct, and the reading experience stays clean on all
-            screen sizes. The understated visual style reflects the Nordic aesthetic — simple,
-            purposeful, and built to last.
+            On each app launch the app calls the Wordnik Word of the Day endpoint, deserializes
+            the JSON response with <code>System.Text.Json</code>, and displays the word,
+            its definition, and an example sentence. A cached fallback is shown when the
+            device is offline.
           </p>
 
           <h3>What I Learned</h3>
           <p>
-            Building a community platform meant thinking beyond the UI — user flows for
-            registration, moderation considerations, and making sure the forum hierarchy felt
-            intuitive at a glance. The project sharpened my approach to information architecture
-            and reinforced the value of keeping a product focused on its core use case.
+            This project taught me how to structure a multi-feature MAUI app cleanly, consume
+            a third-party REST API on Android, and handle the MAUI Shell navigation lifecycle.
+            Managing state across the calendar, to-do list, and API views in a single coherent
+            MVVM architecture was the most valuable challenge.
           </p>
         </div>
 
         <aside class="project-sidebar">
-          <div class="sidebar-card reveal">
-            <h4>Tech Stack</h4>
-            <div class="sidebar-tech-list">
-              <span class="skill-tag">HTML / CSS</span>
-              <span class="skill-tag">JavaScript</span>
-              <span class="skill-tag">PHP</span>
-              <span class="skill-tag">MySQL</span>
+          <div class="sidebar-card">
+            <h4>Links</h4>
+            <div class="sidebar-links">
+              
+              <a href="https://github.com/Oliver-Martinsson/Booked" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+                <svg width="16" height="16" fill="currentColor"><use href="../assets/icons.svg#icon-github"></use></svg>
+                GitHub Repository
+              </a>
             </div>
           </div>
 
-          <div class="sidebar-card reveal">
+          <div class="sidebar-card">
+            <h4>Tech Stack</h4>
+            <div class="sidebar-tech-list">
+              <span class="skill-tag">C#</span>
+              <span class="skill-tag">.NET MAUI</span>
+              <span class="skill-tag">MVVM</span>
+              <span class="skill-tag">Wordnik API</span>
+              <span class="skill-tag">HttpClient</span>
+              <span class="skill-tag">CommunityToolkit.Mvvm</span>
+              <span class="skill-tag">XAML</span>
+              <span class="skill-tag">Android</span>
+              <span class="skill-tag">Mobile Development</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card">
             <h4>Details</h4>
             <div class="project-meta-list">
               <div class="meta-item">
                 <span class="meta-label">Type</span>
-                <span class="meta-value">Community Forum</span>
+                <span class="meta-value">Mobile App</span>
               </div>
               <div class="meta-item">
-                <span class="meta-label">Category</span>
-                <span class="meta-value">Full-Stack</span>
+                <span class="meta-label">Platform</span>
+                <span class="meta-value">Android (API 24–34)</span>
               </div>
               <div class="meta-item">
                 <span class="meta-label">Status</span>
-                <span class="meta-value meta-status">Live</span>
+                <span class="meta-value meta-status">Completed</span>
               </div>
             </div>
           </div>
