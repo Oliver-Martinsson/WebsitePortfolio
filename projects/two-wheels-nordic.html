@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tipsprommenad | Oliver Martinsson</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>Oliver Martinsson<span class="logo-bracket">/&gt;</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../index.html#home" class="nav-link">Home</a></li>
+        <li><a href="../index.html#about" class="nav-link">About</a></li>
+        <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="../assets/Oliver-MartinssonCV.pdf" download class="nav-btn">Download CV</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="project-page-hero">
+    <div class="container">
+      <a href="../index.html#projects" class="back-link">
+        <svg width="16" height="16"><use href="../assets/icons.svg#icon-arrow-left"></use></svg>
+        Back to Projects
+      </a>
+      <div class="project-hero-meta">
+        <span class="project-category-badge">Web</span>
+      </div>
+      <h1 class="project-page-title">Tipsprommenad</h1>
+      <p class="project-page-desc">
+        A web app that turns a walk into an interactive quiz. Players move through real-world
+        locations where geo-fencing unlocks questions as they enter each zone. Built with
+        Firebase as the back-end, Google OAuth for authentication, and the Google Maps API
+        to render routes and trigger location-based checkpoints.
+      </p>
+      <div class="project-hero-links">
+        <a href="https://OliverMartinsson.se" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <svg width="18" height="18"><use href="../assets/icons.svg#icon-external-link"></use></svg>
+          Live Demo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="project-gallery">
+    <div class="container">
+
+
+      <div class="gallery-main" id="gallery-main">
+        <div class="gallery-placeholder">
+          <svg width="48" height="48"><use href="../assets/icons.svg#icon-image"></use></svg>
+          <span>Main screenshot</span>
+          <code>../assets/projects/tipsprommenad-1.jpg</code>
+        </div>
+      </div>
+
+      <div class="gallery-thumbnails">
+        <div class="gallery-thumb">
+          <div class="gallery-placeholder">
+            <svg width="28" height="28"><use href="../assets/icons.svg#icon-image"></use></svg>
+            <span>Screenshot 2</span>
+          </div>
+        </div>
+        <div class="gallery-thumb">
+          <div class="gallery-placeholder">
+            <svg width="28" height="28"><use href="../assets/icons.svg#icon-image"></use></svg>
+            <span>Screenshot 3</span>
+          </div>
+        </div>
+        <div class="gallery-thumb">
+          <div class="gallery-placeholder">
+            <svg width="28" height="28"><use href="../assets/icons.svg#icon-image"></use></svg>
+            <span>Screenshot 4</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <section class="project-content">
+    <div class="container">
+      <div class="project-content-grid">
+
+        <div class="project-body reveal">
+          <h3>Overview</h3>
+          <p>
+            Tipsprommenad is a location-aware quiz walk web app. Participants follow a route on a
+            map and, as they physically walk into each checkpoint zone, a question is automatically
+            unlocked on their device. This combines the social experience of a walk with a
+            gamified quiz, making it ideal for events, school activities, or team building.
+          </p>
+          <p>
+            The app uses Firebase for real-time data sync and back-end storage, Google OAuth so
+            users can sign in instantly with their Google account, and the Google Maps JavaScript
+            API to display the route and manage the geo-fenced checkpoint areas.
+          </p>
+
+          <h3>Key Features</h3>
+          <ul>
+            <li>Interactive map powered by the Google Maps API showing the quiz route</li>
+            <li>Geo-fencing — questions unlock automatically when a player enters a checkpoint zone</li>
+            <li>Sign-in with Google via Google OAuth for quick, secure authentication</li>
+            <li>Firebase Firestore for real-time question, answer, and score storage</li>
+            <li>Admin view for creating routes, adding checkpoints, and writing questions</li>
+            <li>Live score tracking as players complete each checkpoint</li>
+          </ul>
+
+          <h3>How Geo-fencing Works</h3>
+          <p>
+            Each checkpoint is stored as a coordinate and radius in Firestore.
+            The app continuously reads the device's GPS position via the browser Geolocation API
+            and checks whether the player is inside any checkpoint circle. When a match is found,
+            the corresponding question is fetched and displayed — and the checkpoint is marked as
+            visited so it cannot be unlocked twice.
+          </p>
+
+          <h3>What I Learned</h3>
+          <p>
+            This project deepened my understanding of real-time databases, OAuth flows, and
+            browser-side geolocation. Integrating three external APIs (Firebase, Google Maps, and
+            Google OAuth) in a single cohesive app was a great exercise in API design, async
+            JavaScript, and handling edge cases like GPS drift or loss of connectivity.
+          </p>
+        </div>
+
+        <aside class="project-sidebar">
+          <div class="sidebar-card reveal">
+            <h4>Tech Stack</h4>
+            <div class="sidebar-tech-list">
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Firebase</span>
+              <span class="skill-tag">Firestore</span>
+              <span class="skill-tag">Google OAuth</span>
+              <span class="skill-tag">Google Maps API</span>
+              <span class="skill-tag">Geo-fencing</span>
+              <span class="skill-tag">HTML / CSS</span>
+            </div>
+          </div>
+
+          <div class="sidebar-card reveal">
+            <h4>Details</h4>
+            <div class="project-meta-list">
+              <div class="meta-item">
+                <span class="meta-label">Type</span>
+                <span class="meta-value">Web App</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Category</span>
+                <span class="meta-value">Full-Stack</span>
+              </div>
+              <div class="meta-item">
+                <span class="meta-label">Status</span>
+                <span class="meta-value meta-status">Completed</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="footer-copy">
+        Designed &amp; Built by <span class="accent">Oliver Martinsson</span> &mdash; &copy; <span id="year"></span>
+      </p>
+      <p class="footer-tech">Built with HTML, CSS &amp; JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
